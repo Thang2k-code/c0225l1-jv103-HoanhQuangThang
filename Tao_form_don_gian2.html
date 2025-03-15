@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Đăng Ký Học Viên</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #FFFFCC;
+    }
+    .container {
+      width: 400px;
+      background-color: #FFFF99;
+      padding: 20px;
+      border: 1px solid #ccc;
+      margin: 50px auto;
+    }
+    .header {
+      background-color: #cce6ff;
+      padding: 10px;
+      font-size: 18px;
+      font-weight: bold;
+      text-align: center;
+    }
+    label {
+      display: block;
+      margin-top: 10px;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 5px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+    }
+    .radio-group {
+      display: flex;
+      align-items: center;
+    }
+    .radio-group input {
+      width: auto;
+      margin-right: 5px;
+    }
+    .buttons {
+      text-align: center;
+      margin-top: 10px;
+    }
+    button {
+      padding: 5px 15px;
+      margin-right: 5px;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <div class="header">ĐĂNG KÝ HỌC VIÊN</div>
+  <form>
+    <label for="name">Họ và tên</label>
+    <input type="text" id="name" name="Họ và tên" required>
+
+    <label for="dob">Ngày sinh</label>
+    <input type="date" id="dob" name="Ngày sinh" required>
+
+    <label>Giới tính</label>
+    <div class="radio-group">
+      <input type="radio" id="male" name="Giới tính" value="Nam" required>
+      <label for="male">Nam</label>
+      <input type="radio" id="female" name="Giới tính" value="Nữ">
+      <label for="female">Nữ</label>
+    </div>
+
+    <label for="address">Địa chỉ</label>
+    <textarea id="address" name="Địa chỉ" rows="3" required></textarea>
+
+    <label for="class">Lớp</label>
+    <select id="class" name="class" required>
+      <option value="">-- Chọn lớp --</option>
+      <option value="1">Lớp 1</option>
+      <option value="2">Lớp 2</option>
+      <option value="3">Lớp 3</option>
+      <option value="other">Khác</option>
+    </select>
+
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="phone">Điện thoại</label>
+    <input type="tel" id="phone" name="Điện Thoại" pattern="[0-9]{10,11}" required>
+
+    <div class="buttons">
+      <button type="submit">Đăng ký</button>
+      <button type="reset">Nhập lại</button>
+    </div>
+  </form>
+</div>
+</body>
+</html>
