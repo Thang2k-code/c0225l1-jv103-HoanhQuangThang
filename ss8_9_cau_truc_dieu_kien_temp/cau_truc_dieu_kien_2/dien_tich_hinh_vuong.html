@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Diện tích hình vuông</h1>
+<label> Cạnh hình vuông (m):
+  <input type="text" id="canh">
+</label>
+<br>
+<br>
+<button onclick="svuong()">Diện tích hình vuông: </button>
+<p id="result"></p>
+<script>
+    function svuong(){
+        let canh = Number(document.getElementById("canh").value);
+        let s = canh * canh;
+        let resultElement = document.getElementById("result");
+
+        if (isNaN(canh)) {
+            resultElement.innerHTML = "Giá trị sai: Yêu cầu nhập số";
+        } else {
+            resultElement.innerHTML = "Diện tích hình vuông: " + s + " mét vuông";
+        }
+    }
+</script>
+</body>
+</html>

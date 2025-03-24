@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Chuyển đổi độ C sang độ F</h1>
+<label> Nhập độ C của bạn:
+    <input type="number" id="doc">
+</label>
+<br>
+<br>
+<button onclick="changedegrees()">Chuyển đổi sang độ F</button>
+<p id="result"> </p>
+
+<script>
+    function changedegrees(){
+        let doc = Number(document.getElementById("doc").value);
+        let dof = doc * ( 9/5 + 32 );
+        let result = "dof";
+
+        document.getElementById("result").innerHTML= "Độ F của bạn: " + dof;
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Kiểm tra giá trị</h1>
+<label>Nhập giá trị a: <input type="text" id="numa"></input></label>
+<br>
+<br>
+<label>Nhập giá trị b: <input type="text" id="numb"></input></label>
+<br>
+<br>
+<label>Nhập giá trị c: <input type="text" id="numc"></input></label>
+<br>
+<br>
+<button onclick="check()">Kiểm tra giá trị</button>
+<p id="result"></p>
+
+<script>
+  function check() {
+    let numa = Number(document.getElementById("numa").value);
+    let numb = Number(document.getElementById("numb").value);
+    let numc = Number(document.getElementById("numc").value);
+    let result = "";
+
+    if (isNaN(numa) || isNaN(numb) || isNaN(numc)) {
+      result = "Giá trị không hợp lệ, hãy nhập giá trị là số thực";
+    }
+    else if (numa > 0 && numb > 0 && numc > 0) {
+      if (numa + numb > numc && numa + numc > numb && numb + numc > numa) {
+        result = "Giá trị a,b,c là cạnh của một tam giác";
+      } else {
+        result = "Giá trị a,b,c không đủ điều kiện là cạnh của một tam giác (cần thỏa mãn bất đẳng thức tam giác)";
+      }
+    }
+    else {
+      result = "Giá trị a,b,c không đủ điều kiện là cạnh của một tam giác (cần lớn hơn 0)";
+    }
+    document.getElementById("result").innerHTML = result;
+    // lưu ý bài này //
+  }
+</script>
+</body>
+</html>

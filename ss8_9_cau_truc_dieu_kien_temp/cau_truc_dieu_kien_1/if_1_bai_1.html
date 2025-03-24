@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<h1>Tìm số chia hết</h1>
+<label for="a">Nhập số a:
+    <input type="number" id="a" />
+</label>
+<br>
+<br>
+<label for="b">Nhập số b:
+<input type="number" id="b" min="1" />
+</label>
+<p id="result"></p>
+<button onclick="check()">Kết quả</button>
+
+<script>
+    function check() {
+        let a = Number(document.getElementById("a").value);
+        let b = Number(document.getElementById("b").value);
+
+        if (b === 0) {
+            document.getElementById("result").innerHTML = "Không thể chia cho 0";
+            return;
+        }
+        if (a % b === 0) {
+            document.getElementById("result").innerHTML = "Số a chia hết cho b";
+        } else {
+            document.getElementById("result").innerHTML = "Số a không chia hết cho b";
+        }
+    }
+</script>
+</body>
+</html>

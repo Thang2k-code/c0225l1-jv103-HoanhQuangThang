@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Chuyển đổi từ Met sang Feet</h1>
+<label> Nhập dữ liệu (m):
+  <input type="text" id="m">
+</label>
+<br>
+<br>
+<button onclick="mettofeet()">Chuyển đổi</button>
+<p id="result"></p>
+
+<script>
+  function mettofeet() {
+    let m = Number(document.getElementById("m").value);
+    let feet = m * 3.28084;
+    let resultElement = document.getElementById("result");
+
+    if (isNaN(m)){
+      resultElement.innerHTML = "Giá trị sai: Yêu cầu nhập số";
+    } else{
+      resultElement.innerHTML = "Feet: " + feet;
+    }
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1> Xếp loại học lực</h1>
+<label>Điểm bài kiểm tra:
+  <input type="number" id="test1" min="0" max="10">
+</label>
+<br>
+<br>
+<label>Điểm thi giữa kỳ:
+  <input type="number" id="test2" min="0" max="10">
+</label>
+<br>
+<br>
+<label>Điểm thi cuối kỳ:
+  <input type="number" id="test3" min="0" max="10">
+</label>
+<br>
+<br>
+<button onclick="check()">Học lực của bạn </button>
+<p id="result">Học lực của bạn là:</p>
+<script>
+  function check(){
+    let test1 = Number(document.getElementById("test1").value);
+    let test2 = Number(document.getElementById("test2").value);
+    let test3 = Number(document.getElementById("test3").value);
+    let avg= (test1 * 0.2) + (test2 * 0.3) + (test3 *0.5);
+    let grade;
+    if (avg >= 8.0 && test1 >= 6.5 && test2 >= 6.5 && test3 >= 6.5) {
+      grade = "Giỏi";
+    } else if (avg >= 6.5 && test1 >= 5.0 && test2 >= 5.0 && test3 >= 5.0) {
+      grade = "Khá";
+    } else if (avg >= 5.0 && test1 >= 3.5 && test2 >= 3.5 && test3 >= 3.5) {
+      grade = "Trung bình";
+    } else {
+      grade = "Yếu";
+    }
+      document.getElementById("result").innerHTML= "Học lực của bạn là: " + grade;
+  }
+</script>
+</body>
+</html>

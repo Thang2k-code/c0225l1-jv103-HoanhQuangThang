@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Giá trị lớn nhất</h1>
+<label>Giá trị 1:
+    <input type="number" id="a">
+</label>
+<br>
+<br>
+<label>Giá trị 2:
+    <input type="number" id="b">
+</label>
+<br>
+<br>
+<label>Giá trị 3:
+    <input type="number" id="c">
+</label>
+<br>
+<br>
+<button onclick="check()">Kiểm tra giá trị</button>
+<br>
+<p id="result"></p>
+
+<script>
+    function check(){
+        let a = Number(document.getElementById("a").value);
+        let b = Number(document.getElementById("b").value);
+        let c = Number(document.getElementById("c").value);
+        let max;
+
+        if (a > b && a > c){
+            max = "a là giá trị lớn nhất"
+        }else if (b > a && b > c){
+            max = "b là giá trị lớn nhất"
+        }else{
+            max = "c là giá trị lớn nhất"
+        }
+        document.getElementById("result").innerHTML= max
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Diện tích tam giác vuông</h1>
+<label> Cạnh a (m):
+  <input type="text" id="canha">
+</label>
+<br>
+<br>
+<label> Cạnh b (m):
+  <input type="text" id="canhb">
+</label>
+<br>
+<br>
+<button onclick="stgv()">Diện tích tam giác vuông</button>
+<p id="result"></p>
+<script>
+  function stgv(){
+    let canha = Number(document.getElementById("canha").value);
+    let canhb = Number(document.getElementById("canhb").value);
+    let s = (canha * canhb) * 0.5;
+    let resultElement = document.getElementById("result");
+
+    if (isNaN(canha) || canha <= 0 || isNaN(canhb) || canhb <= 0){
+      resultElement.innerHTML = "Giá trị sai: Yêu cầu nhập số";
+    } else {
+      resultElement.innerHTML = "Diện tích tam giác vuông: " + s + " mét vuông";
+    }
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Diện tích hình chữ nhật</h1>
+<label> Chiều dài hình chữ nhật (m):
+    <input type="text" id="dai">
+</label>
+<br>
+<br>
+<label> Chiều rộng hình chữ nhật (m):
+    <input type="text" id="rong">
+</label>
+<br>
+<br>
+<button onclick="shcn()">Diện tích hình chữ nhật</button>
+<p id="result"></p>
+<script>
+    function shcn(){
+        let dai = Number(document.getElementById("dai").value);
+        let rong = Number(document.getElementById("rong").value);
+        let s = dai * rong;
+        let resultElement = document.getElementById("result");
+
+        if (isNaN(dai) || dai <= 0 || isNaN(rong) || rong <= 0){
+            resultElement.innerHTML = "Giá trị sai: Yêu cầu nhập số";
+        } else {
+            resultElement.innerHTML = "Diện tích hình chữ nhật: " + s + " mét vuông";
+        }
+    }
+</script>
+</body>
+</html>

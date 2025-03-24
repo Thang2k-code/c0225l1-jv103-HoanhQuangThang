@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Tính thuế thu nhập cá nhân</h1>
+
+<label>Nhập thu nhập chịu thuế hàng tháng (VNĐ): </label>
+<input type="number" id="thuNhap">
+<br>
+<br>
+<button onclick="tinhThue()">Tính thuế</button>
+<p id="result"></p>
+
+<script>
+  function tinhThue() {
+    let thuNhap = Number(document.getElementById("thuNhap").value);
+    let result="";
+
+    if (thuNhap <= 5000000) {
+      result  = thuNhap * 0.05;
+    } else if (thuNhap <= 10000000) {
+      result  = 5000000 * 0.05 + (thuNhap - 5000000) * 0.10;
+    } else if (thuNhap <= 18000000) {
+      result  = 5000000 * 0.05 + 5000000 * 0.10 + (thuNhap - 10000000) * 0.15;
+    } else if (thuNhap <= 32000000) {
+      result  = 5000000 * 0.05 + 5000000 * 0.10 + 8000000 * 0.15 + (thuNhap - 18000000) * 0.20;
+    } else if (thuNhap <= 52000000) {
+      result  = 5000000 * 0.05 + 5000000 * 0.10 + 8000000 * 0.15 + 14000000 * 0.20 + (thuNhap - 32000000) * 0.25;
+    } else if (thuNhap <= 80000000) {
+      result  = 5000000 * 0.05 + 5000000 * 0.10 + 8000000 * 0.15 + 14000000 * 0.20 + 20000000 * 0.25 + (thuNhap - 52000000) * 0.30;
+    } else {
+      result  = 5000000 * 0.05 + 5000000 * 0.10 + 8000000 * 0.15 + 14000000 * 0.20 + 20000000 * 0.25 + 28000000 * 0.30 + (thuNhap - 80000000) * 0.35;
+    }
+
+    document.getElementById("result").innerHTML = "Thuế thu nhập cá nhân phải nộp là: " + result + " VNĐ";
+  }
+</script>
+</body>
+</html>

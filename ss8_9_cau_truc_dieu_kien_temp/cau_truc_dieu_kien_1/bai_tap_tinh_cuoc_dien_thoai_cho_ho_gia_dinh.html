@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Cước điện thoại cho một hộ gia đình</h1>
+<label>Phí thuê bao
+<input type="number" id="thuebao" min="0">
+</label>
+<br>
+<br>
+<label>Phí Ngoại mạng
+  <input type="number" id="ngoaimang" min="0" >
+</label>
+<br>
+<br>
+<label>Phí Nội mạng
+  <input type="number" id="noimang" min="0">
+  <br>
+  <br>
+  <button onclick="check()">Kiểm tra</button>
+  <h3 id="result"></h3>
+  <script>
+    function check() {
+      let thuebao = Number(document.getElementById("thuebao").value);
+      let ngoaimang = Number(document.getElementById("ngoaimang").value);
+      let noimang = Number(document.getElementById("noimang").value);
+
+      const cuocnoimang = 1000;
+      const cuocngoaimang = 1500;
+      let tongtien = thuebao + (noimang * cuocnoimang) + (ngoaimang * cuocngoaimang);
+
+      document.getElementById("result").innerHTML= "Cước điện thoại của bạn là: " +tongtien;
+    }
+  </script>
+</label>
+</body>
+</html>

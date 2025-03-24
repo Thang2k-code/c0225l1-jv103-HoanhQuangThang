@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Kiểm tra một số nhập vào là tuổi của một người</h1>
+<label>Nhập giữ kiện để kiểm tra:
+    <input type="text" id="z">
+</label>
+<br>
+<br>
+<button onclick="check()">Kiểm tra</button>
+<p id="result"></p>
+
+<script>
+    function check(){
+        let z = Number(document.getElementById("z").value);
+        let result= "";
+
+        if (isNaN(z)){
+            result = "Giá trị không đúng. Bạn hãy nhập lại dưới dạng số";
+        } else if (z > 0 && z < 120 ){
+            result = "Đây là số tuổi của một người";
+        }else {
+            result = "Đây không phải số tuổi của một người";
+        }
+        document.getElementById("result").innerHTML= result;
+    }
+</script>
+</body>
+</html>

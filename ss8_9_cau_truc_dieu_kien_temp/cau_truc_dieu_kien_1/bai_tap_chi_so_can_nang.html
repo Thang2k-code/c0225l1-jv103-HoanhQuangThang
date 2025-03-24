@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chỉ số cân nặng</title>
+</head>
+<body>
+<h1>Tính chỉ số cân nặng</h1>
+<label for="weight"> Nhập cân nặng: (kg)
+    <input type="number" id="weight" min="0">
+</label>
+<br>
+<br>
+<label for="height">Nhập chiều cao: (m)
+    <input type="number" id="height" min="0">
+</label>
+<p id="result"></p>
+<br>
+<br>
+<button onclick="check()">Kiểm tra</button>
+<br>
+<br>
+ <script>
+     function check() {
+         let weight = document.getElementById("weight").value;
+         let height = document.getElementById("height").value;
+         let heightInMetters = height / 100;
+         let bmi = weight / (heightInMetters * heightInMetters);
+         let result = "";
+
+         if (bmi < 18.5) {
+             result= "Underweight";
+         } else if (18.5 <= bmi < 25) {
+             result= "Normal"
+         } else if (25 <= bmi < 30) {
+             result= "Overweight";
+         } else if (30 <= bmi) {
+             result= "Obese";
+         }
+         document.getElementById("result").innerHTML= 'Kết quả của bạn là: ' + result;
+     }
+ </script>
+</body>
+</html>

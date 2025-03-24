@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<h1>Phương trình bậc một</h1>
+<p>Ta có biểu thức ax + b = 0</p>
+<br>
+<label> Nhập số a:
+  <input type="text" id="a">
+</label>
+<br>
+<br>
+<label>Nhập số b:
+  <input type="text" id="b">
+</label>
+<br>
+<br>
+<button onclick="check()">Kiểm tra kết quả</button>
+<p id ="result"></p>
+<script>
+  function check(){
+    let a = Number(document.getElementById("a").value);
+    let b = Number(document.getElementById("b").value);
+    let result= "";
+
+    if ( a === 0){
+    if(b === 0) {
+      result= "Phương trình vô số nghiệm";
+    }else {
+      result = "Phương trình vô nghiệm";
+    }
+    }else{
+        x= -b / a;
+      result = "Nghiệm của phương trình là: x = " + x;
+    }
+
+    document.getElementById("result").innerHTML= "Kết quả: " + result;
+  }
+</script>
+</body>
+</html>

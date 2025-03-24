@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Chương trình tính giá điện</h1>
+<label>Nhập giá điện của bạn: <input type="number" id="kwh"></label>
+<br>
+<br>
+<button onclick="check()">Kiểm tra giá điện</button>
+<p id="result"></p>
+<script>
+  function check(){
+    let kwh = Number(document.getElementById("kwh").value);
+    let result = "";
+
+    if(kwh < 50){
+      result = kwh * 1000;
+    }else if (kwh < 100){
+      result = 50 * 1000 + (kwh - 50) * 1500;
+    }else if (kwh < 200){
+      result = 50 * 1000 + 50 * 1500 + (kwh - 100) * 2000;
+    }else{
+      result = 50 * 1000 + 50 * 1500 + 100 * 2000 + (kwh - 200) * 2500;
+    }
+    document.getElementById("result").innerHTML= "Tiền điện của bạn là: " + result + "VND";
+  }
+</script>
+</body>
+</html>
