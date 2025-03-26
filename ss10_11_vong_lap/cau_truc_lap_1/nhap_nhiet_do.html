@@ -1,10 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
+<button onclick="kiemtranhietdo()">Kiểm tra nhiệt độ</button>
 <body>
-$END$
+<script>
+  function kiemtranhietdo(){
+      let nhietdo = prompt ("Nhập nhiệt độ vào đây");
+
+      if (nhietdo > 100) {
+          alert ("Hãy giảm nhiệt độ xuống");
+      }else if (nhietdo < 20){
+          alert("Hãy tăng nhiệt độ của bạn lên");
+      }else{
+          alert("Nhiệt độ ổn định");
+      }
+  }
+</script>
 </body>
 </html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let a = 0, b = 1;
+  let fib = a + b;
+
+  for (let i = 2; fib % 5 !== 0; i++) {
+    fib = a + b;
+    if (fib % 5 === 0) {
+      document.write("Số Fibonacci đầu tiên chia hết cho 5 là " + fib);
+      break;
+    }
+    a = b;
+    b = fib;
+  }
+</script>
+</body>
+</html>
