@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let a = 0
+  let b = 1;
+  let fib;
+  let sum = 1;
+
+  for (let i = 2; i < 20; i++) {
+    fib = a + b;
+    sum += fib;
+    a = b
+    b = fib
+
+  }
+  document.write(sum)
+</script>
+</body>
+</html>

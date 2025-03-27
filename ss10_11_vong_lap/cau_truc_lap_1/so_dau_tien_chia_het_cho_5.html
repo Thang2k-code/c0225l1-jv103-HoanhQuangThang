@@ -11,12 +11,12 @@
 
   for (let i = 2; fib % 5 !== 0; i++) {
     fib = a + b;
+      a = b;
+      b = fib;
     if (fib % 5 === 0) {
       document.write("Số Fibonacci đầu tiên chia hết cho 5 là " + fib);
       break;
     }
-    a = b;
-    b = fib;
   }
 </script>
 </body>

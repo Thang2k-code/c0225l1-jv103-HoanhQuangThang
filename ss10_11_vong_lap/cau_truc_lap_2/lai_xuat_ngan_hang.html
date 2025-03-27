@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function tinhLaiVayVongLap(P, r, n) {
+
+        for (let i = 1; i <= n; i++) {
+            P = P + P * r;
+            document.write("Lãi tháng " + i + " là " + P + "VND <br>");
+        }
+        return P;
+    }
+
+    let P = Number(prompt("Nhập số tiền ban đầu (VND): "));
+    let r = Number(prompt("Nhập lãi suất hàng tháng"));
+    let n = Number(prompt("Nhập số tháng cho vay: "));
+    let A = tinhLaiVayVongLap(P, r, n);
+    let laivay = A - P;
+    document.write("Số tiền cuối cùng phải trả là " + A + "VND<br>");
+    document.write("Số tiền lãi phải trả là:" + laivay + "VND<br>");
+</script>
+</body>
+</html>
