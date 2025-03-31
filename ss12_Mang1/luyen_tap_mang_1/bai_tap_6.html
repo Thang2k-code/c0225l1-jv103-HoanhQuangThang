@@ -12,12 +12,11 @@
     nums = parseInt(prompt("Bạn hãy nhập các giá trị bất kỳ"));
     a.push(nums);
   }
-  if (a.includes(v)){
+  if (a.indexOf(v)!== -1){
     document.write( + v + "  is in the array");
   }else{
     document.write( + v + "  is not in the array");
   }
-
 </script>
 </body>
 </html>
