@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p>Ta có mảng numbers =[0,1,2,3,4,5,6,7,8,9]</p>
+<button onclick="checknumbers()">Chọn để xem kích thước mảng</button>
+<p id="result"></p>
+<script>
+    //function checknumbers() {
+        //let numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+        //let result = numbers.length;
+        //document.getElementById("result").innerHTML= "Kích thước của mảng là: " + result;
+   // }
+    function checknumbers() {
+        let numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+        let count = 0;
+        for (i = 0; i < numbers.length; i++) {
+            if(numbers[i]>= 0 && numbers[i] < 9){
+                count++;
+            }
+        }
+        document.getElementById("result").innerHTML= "Kích thước của mảng là: " + count;
+    }
+</script>
+</body>
+</html>
