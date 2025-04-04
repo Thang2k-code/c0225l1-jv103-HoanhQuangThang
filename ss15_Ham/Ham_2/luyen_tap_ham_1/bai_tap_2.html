@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<label>
+    <input type="number" id="nums">
+</label>
+<button onclick="Checkvalue()">Kiểm tra giá trị mới</button>
+<p id="result"></p>
+<script>
+    function Checkvalue() {
+        let number = Number(document.getElementById("nums").value);
+        let result = number + 1;
+        document.getElementById("result").innerHTML = "Giá trị mới là: " + result;
+    }
+</script>
+</body>
+</html>

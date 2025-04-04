@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<label>
+    <input type="number" id="nums" >
+</label>
+<button onclick="isPrime()">Kiểm tra</button>
+<p id="result"></p>
+<script>
+    function isPrime() {
+        let number = parseInt(document.getElementById("nums").value);
+        if (number <= 1) {
+            document.getElementById('result').innerHTML = number + " không phải là số nguyên tố.";
+            return;
+        }
+        for (let i = 2; i * i <= number; i++) {
+            if (number % i === 0) {
+                document.getElementById("result").innerHTML = "Số " + number + " không phải là số nguyên tố";
+                return;
+            }
+        }
+        document.getElementById('result').innerHTML = number + " là số nguyên tố.";
+    }
+</script>
+</body>
+</html>

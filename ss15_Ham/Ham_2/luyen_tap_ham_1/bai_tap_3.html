@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<label> Nhập giá trị a: <input type="number" id="numa"></label> <br> <br>
+<label> Nhập giá trị b: <input type="number" id="numb" ></label> <br> <br>
+<button onclick="Checknumber()">So sánh giá trị</button>
+<p id="result" ></p>
+<script>
+function Checknumber(){
+    let numa = Number(document.getElementById("numa").value);
+    let numb = Number(document.getElementById("numb").value);
+    let sum = "";
+    if (numa > numb){
+         result=document.getElementById("result").innerHTML= numa + " là giá trị lớn hơn";
+    }else if (numa <= numb){
+         sum = numa + numb;
+         result=document.getElementById("result").innerHTML= "Tổng của 2 số là: " + sum;
+    }else{
+        sum = numa + numb;
+        result=document.getElementById("result").innerHTML= "Tổng của 2 số là: " + sum;
+    }
+}
+</script>
+</body>
+</html>
