@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let a = prompt("Nhập một chữ cái bất kỳ trong bảng chữ cái");
+  let b = ["c","e","h","j","p"];
+  function check() {
+    let found = false;
+    for (let i = 0; i < b.length; i++) {
+      if (a === b[i]) {
+        found = true;
+        alert("Bạn đã nhập đúng giá trị của chúng tôi");
+        break;
+      }
+    }
+    if (!found) {
+      alert("Không tìm thấy giá trị - Hãy thử lại lần nữa");
+    }
+  }check();
+</script>
+</body>
+</html>

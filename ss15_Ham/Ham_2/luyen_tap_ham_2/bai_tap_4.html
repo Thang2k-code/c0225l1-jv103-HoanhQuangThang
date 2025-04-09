@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<label>Nhập chữ hoặc số bất kỳ để kiểm tra giá trị:
+    <input type="text" id="n">
+</label>
+<br>
+<br>
+<button onclick="check()">Kiểm tra giá trị</button>
+<p id="result"></p>
+<script>
+    function check(){
+        let n = Number(document.getElementById("n").value);
+        let result;
+        if (n % 1 === 0) {
+            result = true;
+            document.getElementById("result").innerHTML= "Giá trị của bạn là số - " + result;
+        } else {
+            result = false;
+            document.getElementById("result").innerHTML= "Giá trị của bạn không phải là số - " + result;
+        }
+
+    }
+
+</script>
+</body>
+</html>

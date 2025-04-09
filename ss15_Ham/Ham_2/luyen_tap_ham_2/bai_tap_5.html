@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p>Ta có mảng a = [4,5,9] </p>
+<button onclick="check()">Kiểm tra giá trị lớn nhất</button>
+<p id="result"></p>
+<script>
+  let a = [4,5,9];
+  function check(){
+    let result;
+      if (a[0]>a[1] && a[0]>a[2]){
+        result = a[0];
+      }else if (a[1]>a[0] && a[1]>a[2]){
+        result = a[1];
+      }else {
+        result = a[2];
+    }
+    document.getElementById("result").innerHTML = result + " là giá trị lớn nhất";
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<label>
+  <input type="number" id="num1">
+</label>
+<label>
+  <input type="number" id="num2">
+</label>
+<button onclick="swap()">Đảo ngược 2 số</button>
+<p id="result"></p>
+
+<script>
+function swap(){
+  let num1 = Number(document.getElementById("num1").value);
+  let num2 = Number(document.getElementById("num2").value);
+  [num1,num2]=[num2,num1];
+  document.getElementById("result").innerHTML= "Giá trị sau khi đảo ngược là: " + num1 + " và " + num2;
+}
+</script>
+</body>
+</html>

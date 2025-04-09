@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<label>Nhập giá trị để tính giai thừa: <input type="number" id ="n"></label>
+<button onclick="tinhgiaithua()">Kiểm tra kết quả</button>
+<p id="result"></p>
+<script>
+  function tinhgiaithua(){
+      let n = Number(document.getElementById("n").value);
+      result = 1;
+    if (n === 0){
+        document.getElementById("result").innerHTML = "Giai thừa = 1"
+    }else{
+     for (i=1;i<=n;i++) {
+         result *= i;
+     }
+    }
+      document.getElementById("result").innerHTML = "Giai thừa của " + n + " là: " + result;
+  }
+</script>
+</body>
+</html>

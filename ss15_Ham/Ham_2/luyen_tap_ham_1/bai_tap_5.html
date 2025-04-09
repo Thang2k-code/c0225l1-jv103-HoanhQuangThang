@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let star = prompt("Ngôi sao của bạn là ( Polaris, Aldebaran, Deneb, Vega, Altair, Dubhe, Regulus): ")
+    let a = ["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe", "Regulus"];
+    let b = ["Ursa Minor", "Taurus", "Cygnus", "Lyra", "Aquila", "Ursa Major", "Leo"];
+    let index;
+    function checkstar(star,a,b){
+        for (let i = 0; i < a.length; i++){
+            if (star === a[i]){
+                index = i;
+                break;
+            }
+        }
+        document.write("Chòm sao tương ứng của bạn là: " + b[index]);
+    }
+    checkstar(star, a, b);
+</script>
+</body>
+</html>
