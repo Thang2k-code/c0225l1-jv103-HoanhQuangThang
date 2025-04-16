@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class Apple {
+        #weight;
+        constructor() {
+            this.#weight = 10;
+            }
+        isEmpty(){
+            return this.#weight <=0; //note lại
+        }
+        getWeight(){
+            return this.#weight;
+        }
+        decrease() {
+            if (this.#weight > 0) {
+                this.#weight--;
+            }
+        }
+    }
+    class Human{
+        constructor(name,gender,weight){
+            this.name=name;
+            this.gender=gender;
+            this.weight=weight;
+        }
+        getName(){
+            return this.name;
+        }
+
+        getGender() {
+            return this.gender;
+        }
+        getWeight(){
+            return this.weight;
+        }
+        setGender(newGender){
+             this.gender=newGender;
+        }
+        setWeight(newWeight){
+            this.weight = newWeight;
+        }
+        checkApple(apple){
+            return apple instanceof Apple && !apple.isEmpty();
+        }
+        eat(apple){
+            if (this.checkApple(apple)){
+                console.log(`${this.name} ăn một quả táo.`)
+                apple.decrease();
+                this.weight++
+            }else{
+                console.log(`${this.name} không thể ăn vì không còn táo.`)
+            }
+        }
+    }
+    let Adam = new Human("Adam","Male","70");
+    let Eva = new Human("Eva","Female","50");
+    let apple = new Apple();
+
+    Adam.eat(apple);
+    console.log("Cân nặng của Adam sau khi ăn:", Adam.getWeight());
+    console.log("Khối lượng còn lại của táo:", apple.getWeight());
+
+    Eva.eat(apple);
+    console.log("Cân nặng của Eva sau khi ăn:", Eva.getWeight());
+    console.log("Khối lượng còn lại của táo:", apple.getWeight());
+
+</script>
+</body>
+</html>

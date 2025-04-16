@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p id="result"></p>
+<script>
+    let celsius=Number(prompt("nhập số bất kỳ để tính độ K và độ F"));
+    let result=""
+    class Temperature {
+        constructor(celsius){
+            this.celsius = celsius;
+            if (celsius< -273){
+                alert("Giá trị không hợp lệ - yêu cầu nhập giá trị lớn hơn -273 độ C")
+            }
+            if (isNaN(celsius)){
+                alert("Hãy nhập giá trị là số")
+            }
+        }
+        getFahrenheit(){
+            return this.celsius * 9/5 + 32;
+        }
+        getKelvin(){
+            return this.celsius + 273.15;
+        }
+    }
+
+    let myTemperature = new Temperature(celsius);
+
+    if (celsius >= -273) {
+        let result = `Nhiệt độ: ${celsius}°C<br>`;
+        result += `Fahrenheit: ${myTemperature.getFahrenheit()}°F<br>`;
+        result += `Kelvin: ${myTemperature.getKelvin()} K`;
+        document.getElementById("result").innerHTML = result;
+    }
+
+</script>
+</body>
+</html>

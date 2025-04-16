@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>Vẽ Hình Chữ Nhật</h2>
+<canvas id="myCanvas" width="200" height="200"></canvas>
+
+<script>
+  class Rectangle {
+    constructor(length, width) {
+      this.length = length;
+      this.width = width;
+    }
+
+    getArea() {
+      return this.length * this.width;
+    }
+
+    getPerimeter() {
+      return 2 * (this.length + this.width);
+    }
+
+    draw(canvasId) {
+      const canvas = document.getElementById(canvasId);
+      const ctx = canvas.getContext('2d');
+      ctx.fillRect(20, 20, this.length, this.width);
+      ctx.fillText(`Diện tích: ${this.getArea()}`, 20, this.width + 50);
+      ctx.fillText(`Chu vi: ${this.getPerimeter()}`, 20, this.width + 70);
+    }
+  }
+  const myRectangle = new Rectangle(200, 100);
+  myRectangle.draw('myCanvas');
+
+</script>
+</body>
+</html>

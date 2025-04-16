@@ -24,17 +24,17 @@
    let amount = parseFloat(document.getElementById("amount").value);
    let from = document.getElementById("from").value;
    let to = document.getElementById("to").value;
-   let Result = ""
+   let Result;
    if (from === "USD" && to === "VND") {
-     Result = "Result: " + (amount * 23000);
+     Result = "Result: " + (amount * 23000) + " VND";
    }
    else if (from === "VND" && to ==="USD"){
-     Result = "Result: "+ (amount / 23000);
+     Result = "Result: "+ (amount / 23000) + " USD";
    }
-   else if (from === "VND" && to === "VND") {
-     Result = "Result: " + amount + "VND"
+   else if (from === "VND" && to === " VND") {
+     Result = "Result: " + amount + " VND"
    } else {
-     Result = "Result: " + amount + "USD"
+     Result = "Result: " + amount + " USD"
    }
    document.getElementById("Result").innerHTML = Result;
  }

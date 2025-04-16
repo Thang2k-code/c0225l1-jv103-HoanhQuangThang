@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form  method="get" action="">
+  <h1>Từ điển</h1>
+  <label>Hãy nhập từ tiếng anh bạn muốn dịch nghĩa: <input type="text" id="word"></label>
+  <br>
+  <br>
+  <button onclick="check()">Dịch</button>
+  <p id="result"></p>
+</form>
+<script>
+
+  function check() {
+    event.preventDefault();
+    let word = document.getElementById("word").value;
+    let a = ["hello", "welcome", "see you", "good morning"];
+    let b = ["xin chào", "chào mừng", "hẹn gặp lại", "chào buổi sáng"];
+    let found = false;
+    let result = "";
+    for ( i = 0; i < a.length; i++) {
+      if (a[i] === word) {
+        result = "Nghĩa của từ là: " + b[i];
+        found = true;
+        break;
+      }
+      if (!found) {
+        result = "Không tìm thấy kết quả";
+      }
+    }
+    document.getElementById("result").innerHTML =  result;
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>ADD New Product</h1>
+
+<label>
+    <input id="name" placeholder="Enter name product">
+</label>
+<button onclick="add()">Add</button>
+<p id="result"></p>
+
+<script>
+    class Product{
+        constructor(name){
+            this.name=name;
+        }
+    }
+    let Productlist = [
+        new Product("cam"),
+        new Product("quýt"),
+        new Product("chanh"),
+    ];
+    result();
+
+    function result(){
+        let tableString = `<table border="1" style="border-collapse:  collapse">
+    <tr>
+        <th> Số thứ tự </th>
+        <th> Danh sách sản phẩm </th>
+        <th> Xóa </th>
+    </tr>`;
+
+
+        for (let i = 0; i < Productlist.length; i++) {
+            tableString += `
+    <tr>
+        <td>${i + 1}</td>
+        <td>${Productlist[i].name}</td>
+        <td><button onclick="deleteProduct(${i})">Delete</button></td>
+    </tr>`
+        }
+        document.getElementById("result").innerHTML = tableString;
+    }
+    function deleteProduct() {
+        let conf = confirm("bạn có muốn xoá sinh viên này không");
+        if (conf) {
+            for (let i = 0; i < Productlist.length; i++) {
+                if (Productlist[i].name === name) {
+                    Productlist.splice(i, 1);
+                    break;
+                }
+            }
+        }
+        result();
+    }
+    function add() {
+        let name = document.getElementById("name").value;
+        if (name!==""){
+            let newProduct = new Product( name);
+            Productlist.push(newProduct);
+            document.getElementById("name").value ="";
+        }else {
+            alert("thông tin chưa nhập đủ")
+        }
+        result();
+    }
+</script>
+</body>
+</html>

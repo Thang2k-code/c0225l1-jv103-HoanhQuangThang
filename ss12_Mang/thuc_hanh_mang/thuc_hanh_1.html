@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Dữ liệu</h1>
+<label><input type="text" id="inputs"></label>
+<button onclick="add()" value="add">Thêm dữ liệu</button>
+<button onclick="display()" value="display">Hiển thị dữ liệu</button>
+<p id="result" ></p>
+<script>
+  let array= [];
+  function add(){
+    let inputs =document.getElementById("inputs");
+    let value= inputs.value;
+    document.getElementById("inputs").innerHTML= "";
+  }
+  function display(){
+      let b = "<hr/>";
+      for (i=0;i<array.length;i++){
+          e+= array[i] + "<br/>";
+      }
+      document.getElementById("result").innerHTML = b;
+  }
+</script>
+</body>
+</html>
