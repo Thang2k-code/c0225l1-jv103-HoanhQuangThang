@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<label> Nhập tiền lương của bạn
+    <input id="num" type="number" min="0">
+</label>
+<br>
+<br>
+<button onclick="check()">Kiểm tra thuế thu nhập cá nhân của bạn</button>
+<p id="result"></p>
+<script>
+    function check(){
+        let num= Number(document.getElementById("num").value);
+        let result;
+      if (num===15000000){
+          result= num*80/100;
+      }else if (num>=7000000 && num<15000000){
+          result= num*90/100;
+      }else if (num<7000000){
+          result=num*95/100;
+      }
+        document.getElementById("result").innerHTML= "Với " + num + " thì số lương thực sự mà bạn nhận được là: " + result;
+    }
+</script>
+</body>
+</html>

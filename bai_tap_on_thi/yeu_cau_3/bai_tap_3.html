@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let a = [2,5,8,9];
+  let b = [3,5,7,6];
+  function maxFraction(){
+    let maxvalue = a[0]/b[0];
+    let maxindex = 0;
+    for (let i=0;i<a.length;i++){
+      let value=a[i]/b[i];
+      if (value > maxvalue){
+        maxvalue=value;
+        maxindex=i;
+      }
+    }
+    return maxindex;
+  }
+  console.log("Chỉ số phân số lớn nhất là:", maxFraction());
+
+</script>
+</body>
+</html>

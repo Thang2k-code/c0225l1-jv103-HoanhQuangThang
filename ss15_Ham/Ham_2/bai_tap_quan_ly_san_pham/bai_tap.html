@@ -34,18 +34,17 @@
         <th> Xóa </th>
     </tr>`;
 
-
         for (let i = 0; i < Productlist.length; i++) {
-            tableString += `
+            tableString +=`
     <tr>
         <td>${i + 1}</td>
         <td>${Productlist[i].name}</td>
-        <td><button onclick="deleteProduct(${i})">Delete</button></td>
+        <td><button onclick="deleteProduct()">Delete</button></td>
     </tr>`
         }
         document.getElementById("result").innerHTML = tableString;
     }
-    function deleteProduct() {
+    function deleteProduct(name) {
         let conf = confirm("bạn có muốn xoá sinh viên này không");
         if (conf) {
             for (let i = 0; i < Productlist.length; i++) {

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a = [10,5,9,7,2];
+    let b = [];
+    function prefix(){
+        sum = a[0];
+        b[0]=sum;
+        for(let i=1;i<a.length;i++){
+            sum-=a[i];
+            b[i]=sum;
+        }
+
+        console.log(b)
+        return b
+    }
+    prefix();
+</script>
+</body>
+</html>

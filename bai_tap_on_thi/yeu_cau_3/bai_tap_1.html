@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function prefixsums() {
+        let a = [1, 2, 3, 4, 5];
+        let b = [];
+        let sum = 0;
+        for (let i = 0; i < a.length; i++) {
+            sum += a[i];    // Cộng dồn
+            b[i] = sum;     // Gán vào b
+        }
+        console.log(b);  // Hiển thị kết quả ra console
+        return b;
+    }
+    prefixsums();  // Gọi hàm để chạy
+</script>
+</body>
+</html>
