@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function sumString() {
+        let n;
+        // Lặp lại cho đến khi nhập số hợp lệ
+        do {
+            n = prompt("Nhập số bất kỳ để xác định số lượng phần tử (>0): ");
+            if (n === null) {
+                return; // Thoát nếu bấm cancel
+            }
+        } while (isNaN(n) || n <= 0);
+
+        let arr = [];
+        // Nhập từng phần tử của mảng
+        for (let i = 0; i < n; i++) {
+            let value;
+            do {
+                value = prompt(`Nhập phần tử thứ ${i + 1}:`);
+                if (value === null) return; // Thoát nếu bấm cancel
+                value = +value;
+            } while (isNaN(value));
+            arr.push(value);
+        }
+
+        // Sắp xếp mảng
+        arr.sort((x, y) => x - y);
+        alert("Mảng đã nhập và sau khi sắp xếp: " + arr.join(","));
+
+        let result = [];
+        // Kiểm tra cặp số liền kề và tổng của chúng bằng phần tử tiếp theo
+        for (let j = 0; j < arr.length - 2; j++) {
+            if (arr[j] + arr[j + 1] === arr[j + 2]) {
+                result.push([arr[j], arr[j + 1]]);
+            }
+        }
+
+        // Sắp xếp các cặp theo tổng của 2 phần tử trong cặp
+        result.sort((a, b) => (a[0] + a[1]) - (b[0] + b[1]));
+
+        // Hiển thị kết quả dưới dạng các cặp mảng
+        if (result.length > 0) {
+            let message = "Các cặp phần tử liền kề có tổng bằng phần tử tiếp theo là:\n";
+            for (let i = 0; i < result.length; i++) {
+                let a = result[i][0];
+                let b = result[i][1];
+                message += `[${a}, ${b}]\n`;  // Hiển thị dưới dạng cặp mảng
+            }
+            alert(message);
+        } else {
+            alert("Không có cặp phần tử nào thoả điều kiện.");
+        }
+    }
+
+    sumString();
+</script>
+</body>
+</html>

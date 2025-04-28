@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Danh bạ khách hàng</h1>
+<button onclick="add()">Thêm khách hàng</button>
+<br>
+<br>
+<table id="khachhangTable" border="1" style="border-collapse: collapse">
+    <tr>
+        <th>Mã khách hàng</th>
+        <th>Tên khách hàng</th>
+        <th>Số diện thoại</th>
+        <th>Địa chỉ</th>
+        <th>Email</th>
+    </tr>
+</table>
+<script>
+
+    class khachhangList{
+        constructor(id,name,phonenumber,address,email){
+            this.id=id;
+            this.name=name;
+            this.phonenumber=phonenumber;
+            this.address=address;
+            this.email=email;
+        }
+    }
+    let khachhangListnumber=[];
+    function display() {
+        let tableString = `
+         <tr>
+        <th>Mã khách hàng</th>
+        <th>Tên khách hàng</th>
+        <th>Số diện thoại</th>
+        <th>Địa chỉ</th>
+        <th>Email</th>
+    </tr>
+    `;
+        for (let i = 0; i < khachhangListnumber.length; i++) {
+            tableString += `
+            <tr>
+                <td>${khachhangListnumber[i].id}</td>
+                <td>${khachhangListnumber[i].name}</td>
+                <td>${khachhangListnumber[i].phonenumber}</td>
+                <td>${khachhangListnumber[i].address}</td>
+                <td>${khachhangListnumber[i].email}</td>
+            </tr>
+        `;
+        }
+        document.getElementById("khachhangTable").innerHTML = tableString;
+    }
+    function add() {
+        let id = prompt("Nhập mã khách hàng");
+        let name = prompt("Nhập tên khách hàng");
+        let phonenumber = prompt("Nhập số điện thoại khách hàng");
+        let address = prompt("Nhập địa chỉ khách hàng");
+        let email = prompt("Nhập email khách hàng");
+
+        if (id!==""&&name!==""&&phonenumber!==""&&address!==""&&email!==""){
+            let newkhachhangList= new khachhangList(id,name,phonenumber,address,email);
+            khachhangListnumber.push(newkhachhangList);
+            display();
+        }else {
+            alert("thông tin chưa nhập đủ")
+        }
+    }
+
+</script>
+</body>
+</html>

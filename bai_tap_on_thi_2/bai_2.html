@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let chuoi= prompt("Nhập ký tự bất kỳ ( Tên riêng ): ");
+  function vietTat(chuoi){
+    let tu= chuoi.trim().split(/\s+/);
+    // Loại bỏ khoảng trắng đầu/cuối và  chia chuỗi tại 1 hoặc nhiều dấu cách liên tiếp.
+    if (tu.length===1){
+      alert("Chuỗi bạn nhập chỉ có một từ nên không cần viết tắt");
+      return;
+    }if (chuoi.length>=2){
+      let viettat="";
+      for(let i=0;i<tu.length;i++){
+        viettat += tu[i].charAt(0).toUpperCase()
+      }
+      alert("Viết tắt là: " + viettat);
+    }
+  }
+  vietTat(chuoi);
+</script>
+</body>
+</html>

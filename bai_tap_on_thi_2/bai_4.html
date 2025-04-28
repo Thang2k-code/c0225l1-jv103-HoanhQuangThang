@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Danh bạ điện thoại</h1>
+<button onclick="add()">Thêm danh bạ</button>
+<button onclick="deletephonenumber()">Xóa</button>
+<br>
+<br>
+<table id="phoneTable" border="1" style="border-collapse: collapse">
+    <tr>
+        <th>Số điện thoại</th>
+        <th>Tên chủ danh bạ</th>
+        <th>Địa chỉ</th>
+    </tr>
+</table>
+<script>
+
+class phoneList{
+    constructor(phoneNumber,name,address){
+        this.phoneNumber=phoneNumber;
+        this.name=name;
+        this.address=address;
+    }
+}
+let phoneListnumber=[];
+function display() {
+    let tableString = `
+        <tr>
+            <th>Số điện thoại</th>
+            <th>Tên chủ danh bạ</th>
+            <th>Địa chỉ</th>
+        </tr>
+    `;
+    for (let i = 0; i < phoneListnumber.length; i++) {
+        tableString += `
+            <tr>
+                <td>${phoneListnumber[i].phoneNumber}</td>
+                <td>${phoneListnumber[i].name}</td>
+                <td>${phoneListnumber[i].address}</td>
+            </tr>
+        `;
+    }
+    document.getElementById("phoneTable").innerHTML = tableString;
+}
+  function add() {
+      let phoneNumber = prompt("Nhập số điện thoại");
+      let name = prompt("Nhập tên chủ danh bạ");
+      let address = prompt("Nhập địa chỉ");
+
+      if (phoneNumber!==""&&name!==""&&address!==""){
+          let newphoneList= new phoneList(phoneNumber,name,address);
+          phoneListnumber.push(newphoneList);
+          display();
+      }else {
+          alert("thông tin chưa nhập đủ")
+      }
+  }
+function deletephonenumber() {
+    let phoneNumber = prompt("Nhập số điện thoại cần xóa:");
+    let index = phoneListnumber.findIndex(phoneListnumber => phoneListnumber.phoneNumber === phoneNumber);
+    if (index !== -1) {
+        if (confirm("Bạn có chắc muốn xóa học viên này?")) {
+            phoneListnumber.splice(index, 1); // Xóa khỏi mảng
+            display(); // Cập nhật lại bảng
+        }
+    } else {
+        alert("Không tìm thấy số điện thoại : " + phoneNumber);
+    }
+}
+</script>
+</body>
+</html>

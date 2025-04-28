@@ -6,18 +6,38 @@
 </head>
 <body>
 <script>
-class phoneList{
-    constructor(phoneNumber,name,address){
-        this.phoneNumber=phoneNumber;
-        this.name=name;
-        this.address=address;
+  function isRightTriangle(a, b, c) {
+    // Sắp xếp 3 cạnh tăng dần để dễ kiểm tra định lý Pythagoras
+    let sides = [a, b, c].sort((x, y) => x - y);
+    return sides[0] ** 2 + sides[1] ** 2 === sides[2] ** 2;
+  }
+
+  // Nhập số lượng phần tử
+  let n;
+  do {
+      n = +prompt("Nhập số phần tử của mảng (bội của 3 và ≤ 15):");
+  } while (n % 3 !== 0 || n > 15 || n <= 0);
+
+  // Nhập mảng số nguyên
+  let arr = [];
+  for (let i = 0; i < n; i++) {
+    arr.push(+prompt(`Nhập phần tử thứ ${i + 1}:`));
+  }
+
+  // Hiển thị mảng
+  alert("Mảng đã nhập: " + arr.join(","));
+
+  // Kiểm tra từng nhóm 3 phần tử
+  let ok = true;
+  for (let i = 0; i < n; i += 3) {
+    if (!isRightTriangle(arr[i], arr[i + 1], arr[i + 2])) {
+      ok = false;
+      break;
     }
-}
-let phonenumberList=[];
+  }
 
-function add(){
-
-}
+  // In kết quả
+  alert(ok ? "OK" : "NO"); // toán tử ba ngôi đúng thì ok sai thì no
 </script>
 </body>
 </html>

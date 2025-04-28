@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+   function sumString(){
+       let n;
+       // Lặp lại cho đến khi nhập số hợp lệ
+       do {
+           n = prompt("Nhập số bất kỳ để xác định số lượng phần tử (n<=20): ");
+           if (n === null) {
+               return; // Thoát nếu bấm cancel
+           }
+       } while (isNaN(n) || n >= 20);
+       let arr = [];
+       // Nhập từng phần tử của mảng
+       for (let i = 0; i < n; i++) {
+           let value;
+           do {
+               value = prompt(`Nhập phần tử thứ ${i + 1}:`);
+               if (value === null) return; // Thoát nếu bấm cancel
+               value = +value;
+           } while (isNaN(value));
+           arr.push(value);
+       }
+       arr.sort((x, y) => x - y);
+       alert("Mảng đã nhập và sau khi sắp xếp: " + arr.join(","));
+
+       let result = [];
+       // Kiểm tra cặp số liền kề và tổng của chúng bằng phần tử tiếp theo
+       for (let j = 0; j < arr.length; j++) {
+           if (arr[j]/3===0 && arr[j]/5===0) {
+               result.push(arr[j])
+           }
+       }
+       result.sort((a, b) => (a[0] + a[1]) - (b[0] + b[1]));
+       alert(result)
+   }
+   sumString();
+</script>
+</body>
+</html>
